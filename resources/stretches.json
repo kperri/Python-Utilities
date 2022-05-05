@@ -40,5 +40,26 @@
         "url": "https://media-cldnry.s-nbcnews.com/image/upload/t_fit-560w,f_auto,q_auto:best/newscms/2019_21/2863996/better_arm_roll_stretch.gif",
         "description": "Lying down on your stomach, reach your right arm out to the right directly in line with your shoulder. Place your left hand on the ground under your left shoulder and use it to gently push your body to the right, rolling towards the right arm (while it remains on the ground). You can bend your left knee and place your left foot flat on the ground behind your right knee for stabilization. Hold this stretch for 30 seconds or 5 deep breaths. Feel the stretch in the front of the chest and in the armpit of the right side. Then repeat to the left side.",
         "complete": false
+    },
+    "foam_roller_back_roll": {
+        "name": "Foam Roller Back Roll",
+        "file": "resources\\foamrollerbackroll.gif",
+        "url": "",
+        "description": "Begin by lying on your back with the foam roller positioned underneath your upper back. Your knees should be bent with your feet flat on the floor and your arms can either be down by your sides or crossed in front of your chest. Brace your core and lift yourself up into a shallow bridge position. Slowly start to roll up and down between your lower neck and mid-back, stopping at tight areas along the way. Repeat for 30 seconds.",
+        "complete": false
+    },
+    "foam_roller_back_stretch": {
+        "name": "Foam Roller Back Stretch",
+        "file": "resources\\foamrollerbackstretch.gif",
+        "url": "",
+        "description": "Lie down on your back, knees bent with your feet on the floor. Grab your foam roller, sit up, and place it below and parallel to your upper back. Hug yourself then extend your back over the foam roller. Come back up. (Do not let the foam roller roll!) Repeat until you feel your back relax. Pick up the foam roller and place it higher or lower on your upper back. Repeat the process until you've covered the whole region.",
+        "complete": false
+    },
+    "foam_roller_chest_opener": {
+        "name": "Foam Roller Chest Opener",
+        "file": "resources\\foamrollerchestopener.gif",
+        "url": "",
+        "description": "Place the foam roller vertically on the floor and lie your head, back, and butt upon it so that you are fully supported. Bend your knees and plant both feet into the ground. Cactus those arms so that your hands are by your ears, elbows bent at 90 degrees. Bring the arms as close to the floor as you can. Hold for 2 seconds then bring your arms together. Repeat until you've reached your desired massage time.",
+        "complete": false
     }
 }
