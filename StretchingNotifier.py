@@ -14,10 +14,6 @@ def close(event):
     sys.exit()
 
 
-def skip(event):
-    sys.exit()
-
-
 with open(r"resources\stretches.json", "r") as f:
     stretches = json.load(f)
     valid_stretches = [
@@ -37,11 +33,34 @@ if not os.path.exists(stretch["file"]):
         handler.write(img_data)
 
 window = tk.Tk()
-label = tk.Label(text=f"Break Time: {stretch['name']}")
+main_frame = tk.Frame(window)
+main_frame.pack(fill="both", expand=1)
+canvas = tk.Canvas(main_frame)
+canvas.pack(side="left", fill="both", expand=1)
+scrollbar = tk.Scrollbar(main_frame, orient="vertical", command=canvas.yview)
+scrollbar.pack(side="right", fill="y")
+canvas.configure(yscrollcommand=scrollbar.set)
+canvas.bind("<Configure>", lambda e: canvas.configure(scrollregion=canvas.bbox("all")))
+
+
+def on_mouse_wheel(event):
+    canvas.yview_scroll(-1 * int((event.delta / 120)), "units")
+
+
+canvas.bind_all("<MouseWheel>", on_mouse_wheel)
+
+second_frame = tk.Frame(canvas)
+canvas.create_window((0, 0), window=second_frame, anchor="nw")
+
+label = tk.Label(second_frame, text=f"Break Time: {stretch['name']}")
 label.pack()
+
 
 image = Image.open(stretch["file"])
 frames_total = image.n_frames
+
+window_size = f"{image.width}x{int(image.height*.75)}"
+window.geometry(window_size)
 
 animation = []
 
@@ -53,7 +72,7 @@ def loag_gif():
         animation.append(frame)
 
 
-playback_delay = 500
+playback_delay = int(3000 / frames_total)
 
 
 def update(ind):
@@ -65,19 +84,21 @@ def update(ind):
     window.after(playback_delay, update, ind)
 
 
-image_label = tk.Label(window)
+image_label = tk.Label(second_frame)
 image_label.pack()
 loag_gif()
 
-label = tk.Label(text=stretch["description"], wraplength=250, justify="center")
+label = tk.Label(
+    second_frame, text=stretch["description"], wraplength=250, justify="center"
+)
 label.pack()
 
-button = tk.Button(text="Done", width=10, height=2, bg="gray")
+button = tk.Button(second_frame, text="Done", width=10, height=2, bg="gray")
 button.bind("<Button-1>", close)
 button.pack()
 
-button = tk.Button(text="Skip", width=10, height=2, bg="gray")
-button.bind("<Button-1>", skip)
+button = tk.Button(second_frame, text="Skip", width=10, height=2, bg="gray")
+button.bind("<Button-1>", lambda e: sys.exit())
 button.pack()
 
 window.after(0, update, 0)
