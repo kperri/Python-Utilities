@@ -48,9 +48,9 @@ animation = []
 
 def loag_gif():
     for x in range(frames_total):
+        image.seek(x)
         frame = ImageTk.PhotoImage(image.copy())
         animation.append(frame)
-        image.seek(x)
 
 
 playback_delay = 500
