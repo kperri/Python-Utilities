@@ -5,8 +5,6 @@ import random
 import json
 import tkinter as tk
 
-from sympy import C
-
 
 def close(event):
     stretch["complete"] = True
