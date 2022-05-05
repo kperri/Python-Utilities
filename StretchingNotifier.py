@@ -4,6 +4,7 @@ import requests
 import random
 import json
 import tkinter as tk
+from PIL import Image, ImageTk
 
 
 def close(event):
@@ -39,25 +40,34 @@ window = tk.Tk()
 label = tk.Label(text=f"Break Time: {stretch['name']}")
 label.pack()
 
-frameCnt = stretch["frames"]
-frames = [
-    tk.PhotoImage(file=stretch["file"], format="gif -index %i" % (i))
-    for i in range(frameCnt)
-]
+image = Image.open(stretch["file"])
+frames_total = image.n_frames
+
+animation = []
+
+
+def loag_gif():
+    for x in range(frames_total):
+        frame = ImageTk.PhotoImage(image.copy())
+        animation.append(frame)
+        image.seek(x)
+
+
+playback_delay = 500
 
 
 def update(ind):
-
-    frame = frames[ind]
+    frame = animation[ind]
     ind += 1
-    if ind == frameCnt:
+    if ind == frames_total:
         ind = 0
-    image.configure(image=frame)
-    window.after(750, update, ind)
+    image_label.configure(image=frame)
+    window.after(playback_delay, update, ind)
 
 
-image = tk.Label(window)
-image.pack()
+image_label = tk.Label(window)
+image_label.pack()
+loag_gif()
 
 label = tk.Label(text=stretch["description"], wraplength=250, justify="center")
 label.pack()
