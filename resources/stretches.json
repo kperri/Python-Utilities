@@ -1,1 +1,50 @@
-{"reverse_high_five": {"name": "Reverse High Five", "file": "resources\\reversehighfive.gif", "url": "https://media-cldnry.s-nbcnews.com/image/upload/t_fit-560w,f_auto,q_auto:best/newscms/2019_21/2863736/better_reversehighfive.gif", "frames": 4, "description": "While standing tall, shrug your shoulders up towards your ears and then relax them down. Turn the palms to face the back of the room. Press the hands back as if you're trying to give someone a double high five. Pulse 10 times and then rest.", "complete": true}, "chest_opener": {"name": "Chest Opener", "file": "resources\\chestopener.gif", "url": "https://media-cldnry.s-nbcnews.com/image/upload/t_fit-560w,f_auto,q_auto:best/newscms/2019_21/2863721/better_chest_opener.gif", "frames": 6, "description": "To stretch the front of the body, clasp your hands behind your back and push down towards the ground while reaching the arms away from the back of your body. Open your chest and lift your head up to feel a stretch across your chest. Hold for 5 breaths, and then release.", "complete": true}, "goal_post_squeeze": {"name": "Goal Post Squeeze", "file": "resources\\goalpostsqueeze.gif", "url": "https://media-cldnry.s-nbcnews.com/image/upload/t_fit-560w,f_auto,q_auto:best/newscms/2019_21/2863711/better_goalpostsqueeze.gif", "frames": 2, "description": "While sitting upright, lift your arms up into a goalpost position with your elbows bent at a 90 degree angle even with your shoulders. Relax your shoulders down, and then pull the elbows towards the back of the room. Imagine that you're squeezing a marble in between your shoulder blades as you work the upper back. Release. Repeat 10 times.", "complete": false}, "arm_pit_opener": {"name": "Arm Pit Opener", "file": "resources\\armpitopener.gif", "url": "https://media-cldnry.s-nbcnews.com/image/upload/t_fit-560w,f_auto,q_auto:best/newscms/2019_21/2863731/better_armpit_opener.gif", "frames": 6, "description": "To open up the chest, reach the arms out to the sides and up and overhead, clasp the hands at the top. Stretch the arms up, and then bend the elbows towards the back of the room to stretch the chest and armpits. Hold for a breathe, and then straighten the arms back up. Repeat 10 times.", "complete": false}, "mini_cobra": {"name": "Mini Cobra", "file": "resources\\minicobra.gif", "url": "https://media-cldnry.s-nbcnews.com/image/upload/t_fit-560w,f_auto,q_auto:best/newscms/2019_21/2864096/better_minicobra.gif", "frames": 6, "description": "Lying down on your stomach, place your hands flat on the ground under your shoulders. Pull your naval in towards your spine, and squeeze your inner thighs together. Rest your forehead down on the ground. This is the starting position. Pretend that you\u00e2\u20ac\u2122re pushing a marble forward with your nose, and bring your head forward and up as you press down through your palms to lift your shoulders and chest off the ground. Keep the elbows bent. Squeeze your shoulder blades together to work your upper back even more. Then, slowly lower back down to the ground resting your forehead down. Repeat this 10 times.", "complete": false}, "arm_roll_stretch": {"name": "Arm Roll", "file": "resources\\armrollstretch.gif", "url": "https://media-cldnry.s-nbcnews.com/image/upload/t_fit-560w,f_auto,q_auto:best/newscms/2019_21/2863996/better_arm_roll_stretch.gif", "frames": 6, "description": "Lying down on your stomach, reach your right arm out to the right directly in line with your shoulder. Place your left hand on the ground under your left shoulder and use it to gently push your body to the right, rolling towards the right arm (while it remains on the ground). You can bend your left knee and place your left foot flat on the ground behind your right knee for stabilization. Hold this stretch for 30 seconds or 5 deep breaths. Feel the stretch in the front of the chest and in the armpit of the right side. Then repeat to the left side.", "complete": false}}
+{
+    "reverse_high_five": {
+        "name": "Reverse High Five",
+        "file": "resources\\reversehighfive.gif",
+        "url": "https://media-cldnry.s-nbcnews.com/image/upload/t_fit-560w,f_auto,q_auto:best/newscms/2019_21/2863736/better_reversehighfive.gif",
+        "frames": 4,
+        "description": "While standing tall, shrug your shoulders up towards your ears and then relax them down. Turn the palms to face the back of the room. Press the hands back as if you're trying to give someone a double high five. Pulse 10 times and then rest.",
+        "complete": false
+    },
+    "chest_opener": {
+        "name": "Chest Opener",
+        "file": "resources\\chestopener.gif",
+        "url": "https://media-cldnry.s-nbcnews.com/image/upload/t_fit-560w,f_auto,q_auto:best/newscms/2019_21/2863721/better_chest_opener.gif",
+        "frames": 6,
+        "description": "To stretch the front of the body, clasp your hands behind your back and push down towards the ground while reaching the arms away from the back of your body. Open your chest and lift your head up to feel a stretch across your chest. Hold for 5 breaths, and then release.",
+        "complete": false
+    },
+    "goal_post_squeeze": {
+        "name": "Goal Post Squeeze",
+        "file": "resources\\goalpostsqueeze.gif",
+        "url": "https://media-cldnry.s-nbcnews.com/image/upload/t_fit-560w,f_auto,q_auto:best/newscms/2019_21/2863711/better_goalpostsqueeze.gif",
+        "frames": 2,
+        "description": "While sitting upright, lift your arms up into a goalpost position with your elbows bent at a 90 degree angle even with your shoulders. Relax your shoulders down, and then pull the elbows towards the back of the room. Imagine that you're squeezing a marble in between your shoulder blades as you work the upper back. Release. Repeat 10 times.",
+        "complete": false
+    },
+    "arm_pit_opener": {
+        "name": "Arm Pit Opener",
+        "file": "resources\\armpitopener.gif",
+        "url": "https://media-cldnry.s-nbcnews.com/image/upload/t_fit-560w,f_auto,q_auto:best/newscms/2019_21/2863731/better_armpit_opener.gif",
+        "frames": 6,
+        "description": "To open up the chest, reach the arms out to the sides and up and overhead, clasp the hands at the top. Stretch the arms up, and then bend the elbows towards the back of the room to stretch the chest and armpits. Hold for a breathe, and then straighten the arms back up. Repeat 10 times.",
+        "complete": false
+    },
+    "mini_cobra": {
+        "name": "Mini Cobra",
+        "file": "resources\\minicobra.gif",
+        "url": "https://media-cldnry.s-nbcnews.com/image/upload/t_fit-560w,f_auto,q_auto:best/newscms/2019_21/2864096/better_minicobra.gif",
+        "frames": 6,
+        "description": "Lying down on your stomach, place your hands flat on the ground under your shoulders. Pull your naval in towards your spine, and squeeze your inner thighs together. Rest your forehead down on the ground. This is the starting position. Pretend that you\u00e2\u20ac\u2122re pushing a marble forward with your nose, and bring your head forward and up as you press down through your palms to lift your shoulders and chest off the ground. Keep the elbows bent. Squeeze your shoulder blades together to work your upper back even more. Then, slowly lower back down to the ground resting your forehead down. Repeat this 10 times.",
+        "complete": false
+    },
+    "arm_roll_stretch": {
+        "name": "Arm Roll",
+        "file": "resources\\armrollstretch.gif",
+        "url": "https://media-cldnry.s-nbcnews.com/image/upload/t_fit-560w,f_auto,q_auto:best/newscms/2019_21/2863996/better_arm_roll_stretch.gif",
+        "frames": 6,
+        "description": "Lying down on your stomach, reach your right arm out to the right directly in line with your shoulder. Place your left hand on the ground under your left shoulder and use it to gently push your body to the right, rolling towards the right arm (while it remains on the ground). You can bend your left knee and place your left foot flat on the ground behind your right knee for stabilization. Hold this stretch for 30 seconds or 5 deep breaths. Feel the stretch in the front of the chest and in the armpit of the right side. Then repeat to the left side.",
+        "complete": false
+    }
+}
