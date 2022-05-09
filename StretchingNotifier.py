@@ -111,7 +111,7 @@ def build_ui(stretches, stretch_data):
 
     set_mutable_properties(stretch_data)
     image, frames_total, animations = load_gif(stretch_data["file"])
-    window_size = f"{image.width}x{int(image.height*.9)}"
+    window_size = f"{image.width}x{int(image.height*.9)}+0+0"
     window.geometry(window_size)
 
     playback_delay = int(2000 / frames_total)
@@ -131,7 +131,7 @@ def build_ui(stretches, stretch_data):
         set_mutable_properties(stretch_data)
         image, frames_total, animations = load_gif(stretch_data["file"])
         playback_delay = int(2000 / frames_total)
-        window_size = f"{image.width}x{int(image.height*.9)}"
+        window_size = f"{image.width}x{int(image.height*.9)}+0+0"
         window.geometry(window_size)
 
     skip_button = tk.Button(button_frame, text="Skip", width=10, height=2, bg="gray")
