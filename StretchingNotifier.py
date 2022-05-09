@@ -6,6 +6,9 @@ import json
 import tkinter as tk
 from PIL import Image, ImageTk
 
+TASKBAR_SIZE = 72
+GIF_SPEED_DIVIDEND = 2000
+
 
 def close(stretches):
     global stretch
@@ -111,10 +114,10 @@ def build_ui(stretches, stretch_data):
 
     set_mutable_properties(stretch_data)
     image, frames_total, animations = load_gif(stretch_data["file"])
-    window_size = f"{image.width}x{int(image.height*.9)}+0+0"
+    window_size = f"{image.width}x{window.winfo_screenheight() - TASKBAR_SIZE}+0+0"
     window.geometry(window_size)
 
-    playback_delay = int(2000 / frames_total)
+    playback_delay = int(GIF_SPEED_DIVIDEND / frames_total)
 
     button_frame = tk.Frame(second_frame)
     button_frame.pack(side="bottom", fill="both", expand=True)
@@ -130,8 +133,8 @@ def build_ui(stretches, stretch_data):
         stretch_data = stretches[stretch]
         set_mutable_properties(stretch_data)
         image, frames_total, animations = load_gif(stretch_data["file"])
-        playback_delay = int(2000 / frames_total)
-        window_size = f"{image.width}x{int(image.height*.9)}+0+0"
+        playback_delay = int(GIF_SPEED_DIVIDEND / frames_total)
+        window_size = f"{image.width}x{window.winfo_screenheight() - TASKBAR_SIZE}+0+0"
         window.geometry(window_size)
 
     skip_button = tk.Button(button_frame, text="Skip", width=10, height=2, bg="gray")
@@ -146,6 +149,16 @@ def build_ui(stretches, stretch_data):
     cancel_button.bind("<Button-1>", lambda e: sys.exit(0))
     cancel_button.pack(in_=button_frame, side="left")
 
+    window.bind(
+        "<Key>",
+        lambda e, stretches=stretches: update_ui(stretches)
+        if e.char == "s"
+        else (
+            close(stretches)
+            if e.char == "d"
+            else (sys.exit(0) if e.char == "c" else None)
+        ),
+    )
     window.after(0, update, 0, image_label, window)
     window.mainloop()
 
