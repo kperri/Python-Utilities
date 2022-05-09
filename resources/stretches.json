@@ -61,5 +61,110 @@
         "url": "",
         "description": "Place the foam roller vertically on the floor and lie your head, back, and butt upon it so that you are fully supported. Bend your knees and plant both feet into the ground. Cactus those arms so that your hands are by your ears, elbows bent at 90 degrees. Bring the arms as close to the floor as you can. Hold for 2 seconds then bring your arms together. Repeat until you've reached your desired massage time.",
         "complete": false
+    },
+    "childs_pose": {
+        "name": "Child's Pose",
+        "file": "resources\\childspose.gif",
+        "url": "https://thumbs.gfycat.com/HalfImmenseAnchovy-size_restricted.gif",
+        "description": "With your hands and knees on the ground, sink back through your hips to rest them on your heels. Hinge at your hips as you fold forward, walking your hands out in front of you. Rest your belly on your thighs. Extend your arms in front of or alongside your body with your palms facing up. Focus on breathing deeply and relaxing any areas of tension or tightness. Hold this pose for up to 1 minute.",
+        "complete": false
+    },
+    "knee_to_chest": {
+        "name": "Knee to Chest",
+        "file": "resources\\kneetochest.gif",
+        "url": "https://thumbs.gfycat.com/BewitchedWellinformedDuckling-size_restricted.gif",
+        "description": "Lie on your back with both knees bent and your feet flat on the floor. Keep your left knee bent or extend it straight out along the floor. Draw your right knee into your chest, clasping your hands behind your thigh or at the top of your shinbone. Lengthen your spine all the way down to your tailbone, and avoid lifting your hips. Breathe deeply, releasing any tension. Hold this pose for 30 seconds to 1 minute. Repeat with the other leg.",
+        "complete": false
+    },
+    "piriformis_stretch": {
+        "name": "Piriformis Stretch",
+        "file": "resources\\piriformis.gif",
+        "url": "https://thumbs.gfycat.com/NegligibleJointGlobefish-size_restricted.gif",
+        "description": "Lie on your back with both knees bent and your feet flat on the floor. Place your right ankle at the base of your left thigh. Then, place your hands behind your left thigh and pull up toward your chest until you feel a stretch. Hold this position for 30 seconds to 1 minute. Then do the opposite side.",
+        "complete": false
+    },
+    "seated_spinal_twist": {
+        "name": "Seated Spinal Twist",
+        "file": "resources\\seatedspinaltwist.gif",
+        "url": "https://thumbs.gfycat.com/FearlessUnimportantGoldeneye-size_restricted.gif",
+        "description": "Sit on the floor with both legs extended out in front. Bend your left knee and place your foot to the outside of your right thigh. Place your right arm on the outside of your left thigh. Place your left hand behind you for support. Starting at the base of your spine, twist to the left side. Hold this pose for up to 1 minute. Repeat on the other side.",
+        "complete": false
+    },
+    "pelvic_tilt": {
+        "name": "Pelvic Tilt",
+        "file": "resources\\pelvictilt.gif",
+        "url": "https://post.healthline.com/wp-content/uploads/2021/09/400x400_Situps_While_Pregnany_Are_They_Safe_Pelvic_Tilts_Adjustment.gif",
+        "description": "Lie on your back with both knees bent and feet flat on the floor. Engage your abdominal muscles as you flatten your back against the floor. Breathe normally, holding this position for up to 10 seconds. Release and take a few deep breaths to relax. Do 1 to 3 sets of 3 to 5 repetitions.",
+        "complete": false
+    },
+    "cat_cow": {
+        "name": "Cat Cow",
+        "file": "resources\\catcow.gif",
+        "url": "https://thumbs.gfycat.com/ShimmeringVainBee-size_restricted.gif",
+        "description": "Come onto all fours in a tabletop position (hands and knees on the ground). Press into your hands and feet as you inhale to look up, allowing your belly to fill with air. Exhale, tucking your chin into your chest and arching your spine toward the ceiling. Continue this pattern of movement, moving with each breath. Do this for 1 to 2 minutes.",
+        "complete": false
+    },
+    "sphinx_stretch": {
+        "name": "Sphinx Stretch",
+        "file": "resources\\sphinxstretch.gif",
+        "url": "https://post.healthline.com/wp-content/uploads/2021/09/HL-01.01.SphinxPose.gif",
+        "description": "Lie on your stomach with your elbows underneath your shoulders and your hands extended in front, palms facing down. Set your feet slightly apart. It's OK for your big toes to touch. Gently engage your lower back, buttocks, and thighs as you lift your head and chest. Stay strong in your lower back and abdominals, breathing deeply. Press your pelvis into the floor. Gaze straight ahead or gently close your eyes. Hold this pose for 30 seconds to 1 minute.",
+        "complete": false
+    },
+    "upper_trapezius_stretch": {
+        "name": "Upper Trapezius Stretch",
+        "file": "resources\\uppertrapeziusstretch.gif",
+        "url": "https://i0.wp.com/post.healthline.com/wp-content/uploads/2022/02/HL-08.02.UpperTrapeziusStretch.gif",
+        "description": "While standing straight or sitting in a chair, take your right hand and place it on the back of your head. Take your left hand and tuck it behind your back. Using your right hand, gently pull your head toward your right shoulder. Hold this for 10-15 seconds. Repeat on the other side.",
+        "complete": false
+    },
+    "wall_stretch": {
+        "name": "Wall Stretch",
+        "file": "resources\\wallstretch.gif",
+        "url": "https://cdn-prod.medicalnewstoday.com/content/images/articles/325/325373/wall-stretch-exercise-gif.gif",
+        "description": "Stand with the right side of the body facing a wall. Bend the right arm at the elbow and place the forearm against the wall. The upper arm should be completely straight so that the elbow forms a 90-degree angle. Gently take a step forward with the right foot and twist to the left, allowing the right shoulder and upper back to stretch. Hold the stretch for a few seconds, then return to the starting position. Repeat the stretch several times on both sides.",
+        "complete": false
+    },
+    "trunk_rotation": {
+        "name": "Trunk Rotation",
+        "file": "resources\\trunkrotation.gif",
+        "url": "https://cdn-prod.medicalnewstoday.com/content/images/articles/325/325373/trunk-rotation-stretch-and-exercise-gif.gif",
+        "description": "Lie on the back with the knees bent and the feet flat. Gently rotate the knees to the right, keeping them bent. Hold this position for a few seconds. Return the knees to the center. Repeat the stretch several times on both sides.",
+        "complete": false
+    },
+    "shoulder_roll": {
+        "name": "Shoulder Roll",
+        "file": "resources\\shoulderroll.gif",
+        "url": "https://cdn-prod.medicalnewstoday.com/content/images/articles/325/325373/shoulder-roll-stretch-and-exercise-gif.gif",
+        "description": "Stand or sit up straight, keeping the arms down by the sides. Gently roll the shoulders forward, lifting them up and down in a continuous circular motion. Try to keep the arms relaxed. Do this for around 30 seconds, then repeat it in the opposite direction.",
+        "complete": false
+    },
+    "neck_flexion": {
+        "name": "Neck flexion",
+        "file": "resources\\neckflexion.gif",
+        "url": "https://cdn-prod.medicalnewstoday.com/content/images/articles/325/325373/neck-flexion-stretch-and-exercise-gif.gif",
+        "description": "Sit or stand up straight. Gently drop the chin to the chest, making sure to stop if there is any pain or discomfort. Roll the head so that the right ear is down toward the right shoulder. Hold this position for a few seconds. Keeping the chin down, slowly rotate the head back, continuing until the left ear is near the left shoulder. Hold this position for a few seconds. Continue this gentle rotation of the head from shoulder to shoulder several times. Pause and deepen the stretch whenever there is muscle tension.",
+        "complete": false
+    },
+    "overhead_arm_reach": {
+        "name": "Overhead Arm Reach",
+        "file": "resources\\overheadarmreach.gif",
+        "url": "https://cdn-prod.medicalnewstoday.com/content/images/articles/325/325373/overhead-arm-reach-stretch-gif.gif",
+        "description": "Begin in a sitting or standing position. Stretch the arms above the head. Lean to the right, keeping both arms stretched upward. To deepen the stretch, use the right hand to gently pull the left arm to the right. Return to the starting position. Repeat the stretch several times on both sides.",
+        "complete": false
+    },
+    "levator_scapulae_stretch": {
+        "name": "Levator scapulae stretch",
+        "file": "resources\\levatorscapulaestretch.gif",
+        "url": "https://i0.wp.com/post.healthline.com/wp-content/uploads/2022/02/HL-08.03.LevatorScapulaeStretch.gif",
+        "description": "While standing straight or sitting in a chair, turn your neck 45 degrees to the left. Bend your neck downward (imagine you're looking into a shirt pocket). You can use your left hand for a greater stretch. Hold this for 10-15 seconds. Repeat on the other side.",
+        "complete": false
+    },
+    "puppy_pose": {
+        "name": "Puppy Pose",
+        "file": "resources\\puppypose.gif",
+        "url": "",
+        "description": "From child's pose or tabletop, bring your knees together. Walk your fingertips forward and bring your chest onto the mat. Allow your hips to lift high up toward the ceiling, opening up the chest and bending the back. Hold for a few breaths before moving onto another pose.",
+        "complete": false
     }
 }
