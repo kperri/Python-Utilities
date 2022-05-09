@@ -7,8 +7,9 @@ import tkinter as tk
 from PIL import Image, ImageTk
 
 
-def close(stretch_data):
-    stretch_data["complete"] = True
+def close(stretches):
+    global stretch
+    stretches[stretch]["complete"] = True
     with open(r"resources\stretches.json", "w") as f:
         json.dump(stretches, f)
     sys.exit()
@@ -71,8 +72,8 @@ def load_gif(file):
     return image, frames_total, animations
 
 
-def build_ui(stretch, stretch_data):
-    global playback_delay, frames_total, animations
+def build_ui(stretches, stretch_data):
+    global stretch, playback_delay, frames_total, animations
 
     window = tk.Tk()
     main_frame = tk.Frame(window)
@@ -118,11 +119,13 @@ def build_ui(stretch, stretch_data):
     button_frame = tk.Frame(second_frame)
     button_frame.pack(side="bottom", fill="both", expand=True)
     done_button = tk.Button(button_frame, text="Done", width=10, height=2, bg="gray")
-    done_button.bind("<Button-1>", lambda e, stretch_data=stretch_data: close(stretch_data))
+    done_button.bind(
+        "<Button-1>", lambda e, stretches=stretches: close(stretches),
+    )
     done_button.pack(in_=button_frame, side="left", padx=(0, 5))
 
-    def update_ui(stretches, stretch):
-        global playback_delay, frames_total, animations
+    def update_ui(stretches):
+        global stretch, playback_delay, frames_total, animations
         stretch = pick_new_stretch(stretches, stretch)
         stretch_data = stretches[stretch]
         set_mutable_properties(stretch_data)
@@ -133,8 +136,7 @@ def build_ui(stretch, stretch_data):
 
     skip_button = tk.Button(button_frame, text="Skip", width=10, height=2, bg="gray")
     skip_button.bind(
-        "<Button-1>",
-        lambda e, stretches=stretches, stretch=stretch: update_ui(stretches, stretch),
+        "<Button-1>", lambda e, stretches=stretches: update_ui(stretches),
     )
     skip_button.pack(in_=button_frame, side="left", padx=(0, 5))
 
@@ -148,8 +150,10 @@ def build_ui(stretch, stretch_data):
     window.mainloop()
 
 
+global stretch
+
 stretches = get_stretches()
 stretch = pick_stretch(stretches)
 stretch_data = stretches[stretch]
 download_stretch_data(stretch_data)
-build_ui(stretch, stretch_data)
+build_ui(stretches, stretch_data)
