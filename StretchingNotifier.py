@@ -3,11 +3,25 @@ import sys
 import requests
 import random
 import json
+import time
+import playsound
+import threading
 import tkinter as tk
 from PIL import Image, ImageTk
 
 TASKBAR_SIZE = 72
 GIF_SPEED_DIVIDEND = 2000
+
+
+def countdown(timers, countdown_label):
+    for timer in timers:
+        total_seconds = timer
+        while total_seconds > 0:
+            time.sleep(1)
+            total_seconds -= 1
+            countdown_label["text"] = f"Timer: {total_seconds}"
+
+        playsound.playsound(r"resources\alarm.mp3")
 
 
 def close(stretches):
@@ -76,7 +90,7 @@ def load_gif(file):
 
 
 def build_ui(stretches, stretch_data):
-    global stretch, playback_delay, frames_total, animations
+    global stretch, playback_delay, frames_total, animations, countdown_label
 
     window = tk.Tk()
     main_frame = tk.Frame(window)
@@ -119,14 +133,6 @@ def build_ui(stretches, stretch_data):
 
     playback_delay = int(GIF_SPEED_DIVIDEND / frames_total)
 
-    button_frame = tk.Frame(second_frame)
-    button_frame.pack(side="bottom", fill="both", expand=True)
-    done_button = tk.Button(button_frame, text="Done", width=10, height=2, bg="gray")
-    done_button.bind(
-        "<Button-1>", lambda e, stretches=stretches: close(stretches),
-    )
-    done_button.pack(in_=button_frame, side="left", padx=(0, 5))
-
     def update_ui(stretches):
         global stretch, playback_delay, frames_total, animations
         stretch = pick_new_stretch(stretches, stretch)
@@ -136,6 +142,34 @@ def build_ui(stretches, stretch_data):
         playback_delay = int(GIF_SPEED_DIVIDEND / frames_total)
         window_size = f"{image.width}x{window.winfo_screenheight() - TASKBAR_SIZE}+0+0"
         window.geometry(window_size)
+
+    if "timer" in stretch_data and stretch_data["timer"]:
+        countdown_label = tk.Label(
+            second_frame, text=f"Timer: {stretch_data['timer'][0]}", justify="center"
+        )
+        countdown_label.pack()
+
+    button_frame = tk.Frame(second_frame)
+    button_frame.pack(side="bottom", fill="both", expand=True)
+
+    if "timer" in stretch_data and stretch_data["timer"]:
+        timer_thread = threading.Thread(
+            target=countdown, args=(stretch_data["timer"], countdown_label), daemon=True
+        )
+
+        start_button = tk.Button(
+            button_frame, text="Start", width=10, height=2, bg="gray"
+        )
+        start_button.bind(
+            "<Button-1>", lambda e: timer_thread.start(),
+        )
+        start_button.pack(in_=button_frame, side="left", padx=(0, 5))
+
+    done_button = tk.Button(button_frame, text="Done", width=10, height=2, bg="gray")
+    done_button.bind(
+        "<Button-1>", lambda e, stretches=stretches: close(stretches),
+    )
+    done_button.pack(in_=button_frame, side="left", padx=(0, 5))
 
     skip_button = tk.Button(button_frame, text="Skip", width=10, height=2, bg="gray")
     skip_button.bind(
@@ -156,7 +190,11 @@ def build_ui(stretches, stretch_data):
         else (
             close(stretches)
             if e.char == "d"
-            else (sys.exit(0) if e.char == "c" else None)
+            else (
+                sys.exit(0)
+                if e.char == "c"
+                else (timer_thread.start() if timer_thread and e.char == "w" else None)
+            )
         ),
     )
     window.after(0, update, 0, image_label, window)
