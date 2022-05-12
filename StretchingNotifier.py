@@ -100,8 +100,9 @@ def load_gif(file):
 
 
 def build_ui(stretches, stretch_data):
-    global stretch, playback_delay, frames_total, animations, countdown_labels
+    global stretch, playback_delay, frames_total, animations, countdown_labels, start_button
     countdown_labels = []
+    start_button = None
 
     window = tk.Tk()
     main_frame = tk.Frame(window)
@@ -150,7 +151,7 @@ def build_ui(stretches, stretch_data):
         stretch_data = stretches[stretch]
         set_mutable_properties(stretch_data)
         image, frames_total, animations = load_gif(stretch_data["file"])
-        set_timers(timer_frame, stretch_data)
+        timer_thread = set_timers(timer_frame, stretch_data, button_frame)
         playback_delay = int(GIF_SPEED_DIVIDEND / frames_total)
         window_size = f"{image.width}x{window.winfo_screenheight() - TASKBAR_SIZE}+0+0"
         window.geometry(window_size)
@@ -160,11 +161,12 @@ def build_ui(stretches, stretch_data):
     timer_frame = tk.Frame(second_frame)
     timer_frame.pack()
 
-    def set_timers(timer_frame, stretch_data):
-        global countdown_labels
+    def set_timers(timer_frame, stretch_data, button_frame):
+        global countdown_labels, start_button
         if countdown_labels:
             for countdown_label in countdown_labels:
                 countdown_label.destroy()
+
         if "timer" in stretch_data and stretch_data["timer"]:
             countdown_labels = []
             for timer in stretch_data["timer"]:
@@ -174,24 +176,30 @@ def build_ui(stretches, stretch_data):
                 countdown_label.pack()
                 countdown_labels.append(countdown_label)
 
-    set_timers(timer_frame, stretch_data)
+            timer_thread = threading.Thread(
+                target=countdown, args=(stretch_data["timer"],), daemon=True,
+            )
+
+            if start_button:
+                start_button.destroy()
+
+            start_button = tk.Button(
+                button_frame, text="Start", width=10, height=2, bg="gray"
+            )
+            start_button.bind(
+                "<Button-1>", lambda e: timer_thread.start(),
+            )
+            start_button.pack(
+                in_=button_frame, side="left", padx=(0, 5), before=done_button
+            )
+
+            return timer_thread
+        elif start_button:
+            start_button.destroy()
+            start_button = None
 
     button_frame = tk.Frame(second_frame)
     button_frame.pack(side="bottom", fill="both", expand=True)
-
-    timer_thread = None
-    if "timer" in stretch_data and stretch_data["timer"]:
-        timer_thread = threading.Thread(
-            target=countdown, args=(stretch_data["timer"],), daemon=True,
-        )
-
-        start_button = tk.Button(
-            button_frame, text="Start", width=10, height=2, bg="gray"
-        )
-        start_button.bind(
-            "<Button-1>", lambda e: timer_thread.start(),
-        )
-        start_button.pack(in_=button_frame, side="left", padx=(0, 5))
 
     done_button = tk.Button(button_frame, text="Done", width=10, height=2, bg="gray")
     done_button.bind(
@@ -210,6 +218,8 @@ def build_ui(stretches, stretch_data):
     )
     cancel_button.bind("<Button-1>", lambda e: sys.exit(0))
     cancel_button.pack(in_=button_frame, side="left")
+
+    timer_thread = set_timers(timer_frame, stretch_data, button_frame)
 
     window.bind(
         "<Key>",
