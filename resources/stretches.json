@@ -122,18 +122,6 @@
             60
         ]
     },
-    "pelvic_tilt": {
-        "name": "Pelvic Tilt",
-        "file": "resources\\pelvictilt.gif",
-        "url": "https://post.healthline.com/wp-content/uploads/2021/09/400x400_Situps_While_Pregnany_Are_They_Safe_Pelvic_Tilts_Adjustment.gif",
-        "description": "Lie on your back with both knees bent and feet flat on the floor. Engage your abdominal muscles as you flatten your back against the floor. Breathe normally, holding this position for up to 10 seconds. Release and take a few deep breaths to relax. Do 1 to 3 sets of 3 to 5 repetitions.",
-        "complete": false,
-        "timer": [
-            10,
-            10,
-            10
-        ]
-    },
     "cat_cow": {
         "name": "Cat Cow",
         "file": "resources\\catcow.gif",
