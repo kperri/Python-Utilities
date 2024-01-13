@@ -11,6 +11,9 @@ from PIL import Image, ImageTk
 
 TASKBAR_SIZE = 72
 GIF_SPEED_DIVIDEND = 2000
+RESOURCE_FOLDER = "resources"
+ALARM_SOUND = f"{RESOURCE_FOLDER}\\alarm.mp3"
+JSON_FILE = f"{RESOURCE_FOLDER}\\exercises.json"
 
 
 def countdown(timers):
@@ -29,7 +32,7 @@ def countdown(timers):
         if stop_thread:
             break
         threading.Thread(
-            target=playsound.playsound, args=(r"resources\alarm.mp3",), daemon=True
+            target=playsound.playsound, args=(ALARM_SOUND,), daemon=True
         ).start()
         i += 1
 
@@ -37,7 +40,7 @@ def countdown(timers):
 def close():
     global stretch, stretches
     stretches[stretch]["complete"] = True
-    with open(r"resources\stretches.json", "w") as f:
+    with open(JSON_FILE, "w") as f:
         json.dump(stretches, f)
     sys.exit()
 
@@ -55,7 +58,7 @@ def update(ind, image_label, window):
 
 
 def get_stretches():
-    with open(r"resources\stretches.json", "r") as f:
+    with open(JSON_FILE, "r") as f:
         return json.load(f)
 
 
@@ -63,7 +66,7 @@ def reset_stretches():
     global stretches
     for stretch in stretches:
         stretches[stretch]["complete"] = False
-    with open(r"resources\stretches.json", "w") as f:
+    with open(JSON_FILE, "w") as f:
         json.dump(stretches, f)
 
 
