@@ -94,9 +94,10 @@ def pick_new_stretch(stretches, stretch):
 
 def download_stretch_data(stretch):
     if not os.path.exists(stretch["file"]):
-        img_data = requests.get(stretch["url"]).content
-        with open(stretch["file"], "wb") as handler:
-            handler.write(img_data)
+        if stretch["url"]:
+            img_data = requests.get(stretch["url"]).content
+            with open(stretch["file"], "wb") as handler:
+                handler.write(img_data)
 
 
 def load_gif(file):
