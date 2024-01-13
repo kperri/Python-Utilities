@@ -168,6 +168,7 @@ def build_ui(stretch_data):
         image, frames_total, animations = load_gif(stretch_data["file"])
         timer_thread = set_timers(timer_frame, stretch_data, button_frame)
         playback_delay = int(GIF_SPEED_DIVIDEND / frames_total)
+        current_stretch.set(stretch_data["name"])
         window_size = f"{image.width}x{window.winfo_screenheight() - TASKBAR_SIZE}+0+0"
         window.geometry(window_size)
         if timer_thread and timer_thread.is_alive():
